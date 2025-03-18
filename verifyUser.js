@@ -9,8 +9,7 @@ function auth(req, res, next) {
 
     try {
         const verified = jsonwebtoken.verify(token, process.env.TOKEN_SECRET);
-        req.user = verified; // Store the decoded data (e.g., user ID) in req.user
-
+        req.user = verified; 
         const postId = req.params.postId; // Extract the post ID from the URL parameter
 
         // Find the post by its ID
